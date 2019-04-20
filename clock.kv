@@ -1,0 +1,47 @@
+<Label>:
+    font_name: 'Roboto'
+    font_size: 120
+    markup: True
+    size_hint: (1, 0.2)
+
+<RobotoButton@Button>:
+    font_name: 'Roboto'
+    font_size: 60
+    bold: True
+    size_hint: (0.5, 1)
+    background_normal: 'blue_button_normal.png'
+    background_down: 'blue_button_down.png'
+
+ClockLayout:
+    time_prop: time
+    start_stop: start_stop
+    reset: reset
+    stopwatch: stopwatch
+    orientation: 'vertical'
+
+    Label:
+        size_hint: (1, 0.25)
+    Label:
+        id: time
+        text: '[b]00:00:00[/b]'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: (1, 0.1)
+        padding: 20
+        spacing: 20
+        RobotoButton:
+            id: start_stop
+            on_press: app.start_stop()
+            text: 'Start'
+        RobotoButton:
+            id: reset
+            on_press: app.reset()
+            text: 'Reset'
+            background_normal: 'red_button_normal.png'
+            background_down: 'red_button_down.png'
+    Label:
+        id: stopwatch
+        text: '00:00.[size=80]00[/size]'
+    Label:
+        size_hint: (1, 0.25)
+        
